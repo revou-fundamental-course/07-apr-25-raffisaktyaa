@@ -1,45 +1,44 @@
-function hitungLuas() {
-    let sisi = document.getElementById("inputLuas").value;
-    let hasilLuas = document.getElementById("hasilLuas");
+// Function to validate the form
+function validateForm() {
+    const name = document.getElementById('name').value;
 
-    if (!sisi || sisi <= 0) {
-        alert("Masukkan nilai sisi yang valid!");
-        return;
+    if (name == '') {
+        /// Disini logika ketika gagal
+        alert('Please enter your name');
+    } else {
+        /// Disini logika ketika sukses
+        alert('Form submitted successfully');
+    }
+}
+
+let indexBanner = 0;
+
+function nextBanner() {
+    indexBanner += 1;
+    showBanner();
+}
+
+function showBanner() {
+    const bannerList = document.getElementsByClassName('banner-img');
+
+    // Check if indexBanner is greater than the length of the bannerList
+    if (indexBanner > bannerList.length - 1) {
+        indexBanner = 0;
     }
 
-    let luas = sisi * sisi;
-    hasilLuas.innerHTML = `
-        <p><b>Perhitungan:</b></p>
-        <p>L = S × S</p>
-        <p>L = ${sisi} × ${sisi}</p>
-        <p><b>L = ${luas}</b></p>
-    `;
-}
-
-function hitungKeliling() {
-    let sisi = document.getElementById("inputKeliling").value;
-    let hasilKeliling = document.getElementById("hasilKeliling");
-
-    if (!sisi || sisi <= 0) {
-        alert("Masukkan nilai sisi yang valid!");
-        return;
+    // Hide banner with looping
+    for (let i = 0; i < bannerList.length; i++) {
+        bannerList[i].style = 'display: none';
     }
 
-    let keliling = 4 * sisi;
-    hasilKeliling.innerHTML = `
-        <p><b>Perhitungan:</b></p>
-        <p>K = 4 × S</p>
-        <p>K = 4 × ${sisi}</p>
-        <p><b>K = ${keliling}</b></p>
-    `;
+    // Show the banner
+    bannerList[indexBanner].style = 'display: block';
 }
 
-function resetLuas() {
-    document.getElementById("inputLuas").value = "";
-    document.getElementById("hasilLuas").innerHTML = "";
-}
+showBanner();
 
-function resetKeliling() {
-    document.getElementById("inputKeliling").value = "";
-    document.getElementById("hasilKeliling").innerHTML = "";
-}
+// Set interval to change the banner every 3 seconds
+setInterval(() => {
+    nextBanner();
+}, 3000);
+// Function to toggle the menu
