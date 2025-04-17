@@ -16,7 +16,7 @@
         <!-- Logo -->
         <div class="main-logo"></div>
 
-        <!-- Navigation* -->
+        <!-- Navigation -->
         <nav>
             <a href="#home-section">Home</a>
             <a href="#our-profile-section">Our Profile</a>
@@ -32,17 +32,18 @@
         <!-- Home Section -->
         <section id="home-section">
             <header>
-                <h2>Hi _, Welcome to my website</h2>
+                <h2 id="welcome-message">Hi _, Welcome to my website</h2>
+                <p>Selamat berpetualang di Website Raffi</p>
             </header>
 
-            <!-- Banner Content* -->
+            <!-- Banner Content -->
             <div class="banner-img banner-1"></div>
             <div class="banner-img banner-2"></div>
             <div class="banner-img banner-3"></div>
 
             <!-- Banner Text -->
             <article class="section-content">
-                <p>Lorem Ipsum Dolor Sit Amet Adipiscing...</p>
+                <p>Welcome di Website Raffi</p>
             </article>
         </section>
 
@@ -54,9 +55,10 @@
                 <h2>Our Profile</h2>
             </header>
 
-            <!-- Our Profile Text -->
             <article class="section-content">
-                <p>Lorem Ipsum Dolor Sit Amet Adipiscing...</p>
+                <p>Kami adalah perusahaan yang bergerak di bidang pengembangan web dan aplikasi mobile. 
+                   Berdiri sejak tahun 2020, kami telah membantu berbagai UMKM dan instansi untuk go-digital. 
+                   Tim kami terdiri dari profesional muda yang bersemangat dan inovatif.</p>
             </article>
         </section>
 
@@ -68,33 +70,61 @@
                 <h2>Portfolio</h2>
             </header>
 
-            <!-- Portfolio Text -->
             <article class="section-content">
-                <p>Lorem Ipsum Dolor Sit Amet Adipiscing...</p>
+                <ul>
+                    <li><strong>Aplikasi Inventaris Sekolah:</strong> Sistem pendataan inventaris berbasis web.</li>
+                    <li><strong>Website Toko Online:</strong> E-commerce untuk UMKM lokal dengan fitur pembayaran digital.</li>
+                    <li><strong>Mobile App Wisata Kediri:</strong> Aplikasi Android untuk informasi tempat wisata dan kuliner.</li>
+                </ul>
             </article>
+            
+            
         </section>
 
         <hr />
 
         <!-- Message Us Section -->
-        <section id="message-us-section">
+         <section id="message-us-section">
             <header>
                 <h2>Message Us</h2>
             </header>
-
-            <!-- Message Us Form -->
-            <form>
+            
+            <div class="message-us-container">
+            <!-- Form -->
+             <form id="messageForm">
                 <div>
-                    <label for="name">Name:</label>
-                    <!-- Inputan yang wajib diisi -->
+                    <label for="name">Nama:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 
                 <div>
-                    <button type="button" onclick="validateForm()">Submit</button>
+                    <label for="birthdate">Tanggal Lahir:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
                 </div>
-            </form>
-        </section>
+
+                <div>
+                    <label>Jenis Kelamin:</label>
+                    <input type="radio" id="male" name="gender" value="Laki-Laki" required>
+                    <label for="male">Laki-Laki</label>
+                    <input type="radio" id="female" name="gender" value="Perempuan" required>
+                    <label for="female">Perempuan</label>
+                </div>
+
+                <div>
+                    <label for="message">Pesan:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <div>
+                    <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <!-- Output -->
+        <div class="form-output" id="formOutput"></div>
+    </div>
+</section>
+
     </main>
 
     <hr />
